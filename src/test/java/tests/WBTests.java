@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import pages.CartPage;
 import pages.ProductPage;
 
-import static data.DataForWB.CART_LINK;
 import static data.DataForWB.PRODUCT_NAME;
 
 public class WBTests extends BaseTest {
@@ -29,8 +28,7 @@ public class WBTests extends BaseTest {
 
     @AfterMethod
     public void clearCart() {
-        driver.get(CART_LINK);
-        new CartPage(driver).clearCart();
+        new CartPage(driver).openPage().clearCart();
     }
 
 }

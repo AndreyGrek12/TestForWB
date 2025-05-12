@@ -25,6 +25,12 @@ public class CartPage extends BasePage {
         super(driver);
     }
 
+    public CartPage openPage() {
+        driver.get(CART_LINK);
+        checkOpen();
+        return this;
+    }
+
     public CartPage checkOpen() {
         Assert.assertEquals(driver.getCurrentUrl(),
                 CART_LINK,
